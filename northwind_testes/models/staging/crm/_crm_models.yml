@@ -1,0 +1,31 @@
+version: 2
+
+
+models:
+  - name: stg_customers
+    description: "Tabela Clientes"
+    columns:
+      - name: id
+        description: "Chave Primaria da Tabela Clientes"
+        data_tests:
+          - unique
+          - not null
+      - name: name
+        description: "Nome do cliente"
+        data_tests:
+          - not null
+      - name: email
+        description: "Email dos Clientes"
+        data_tests:
+          - unique
+          - not null
+
+
+  - name: stg_orders
+    description: "Tabela Pedidos"
+    columns:
+      - name: order_id
+        description: "Chave Primaria da Tabela Pedidos"
+        data_tests:
+          - unique
+          - not null
