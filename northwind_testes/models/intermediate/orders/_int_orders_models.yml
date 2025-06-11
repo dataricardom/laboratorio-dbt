@@ -1,0 +1,16 @@
+version: 2
+
+
+models:
+  - name: int_orders_amount_country
+    description: "valor por pais de pedidos"
+    columns:
+      - name: order_id
+        description: "Chave Primaria view int_orders_amount_country"
+        tests:
+          - unique
+          - not_null
+      
+
+
+ 

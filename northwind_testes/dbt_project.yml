@@ -39,4 +39,5 @@ models:
     intermediate:
       +materialized: view
     marts:
+      +schema: "gold"
       +materialized: table

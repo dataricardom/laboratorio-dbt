@@ -2,30 +2,35 @@ version: 2
 
 
 models:
-  - name: stg_customers
+  - name: stg_crm__customers
     description: "Tabela Clientes"
     columns:
-      - name: id
+      - name: customer_id
         description: "Chave Primaria da Tabela Clientes"
-        data_tests:
+        tests:
           - unique
-          - not null
+          - not_null
       - name: name
         description: "Nome do cliente"
         data_tests:
           - not null
       - name: email
         description: "Email dos Clientes"
-        data_tests:
+        tests:
           - unique
-          - not null
+          - not_null
 
 
-  - name: stg_orders
+  - name: stg_crm__orders
     description: "Tabela Pedidos"
     columns:
       - name: order_id
         description: "Chave Primaria da Tabela Pedidos"
-        data_tests:
+        tests:
           - unique
-          - not null
+          - not_null
+      - name: status
+        description: "Status do pedido"
+        tests:
+          - accepted_values:
+              values: ['placed','invalid_status','completed', 'returned']
